@@ -71,14 +71,16 @@ document.addEventListener("keyup", (e) => {
 
 function update() {
     let correct = 0;
-    for (let i = 0; i < width; i++) {
-        let currTile = document.getElementById(row.toString() + "-" + i.toString());
+    for (let j = 0; j < width; j++) {
+        let currTile = document.getElementById(row.toString() + "-" + j.toString());
         let letter = currTile.innerText;
-
+        console.log(letter);
+console.log(rightGuessString);
         //is it in the correct position?
-        if (words[i] == letter) {
-            box.classList.add("correct");
+        if (rightGuessString[j] == letter) {
+            currTile.classList.add("correct");
             correct += 1;
+            console.log(words);
         } //is it in the word?
         else if (words.includes(letter)) {
             currTile.classList.add("present");
