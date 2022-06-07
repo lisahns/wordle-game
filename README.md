@@ -16,3 +16,7 @@ gameOver, shows answer when game over
 update()
 shows whether letter is in the word, is in the correct position, or is not in the word
 
+
+
+Additionally featuers that could be added:
+- if letter is in correct positon, and shown again in the word, it shows up yellow - could implement that this letter appears multiple times, even though that is not the case
