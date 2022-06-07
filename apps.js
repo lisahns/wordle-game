@@ -6,7 +6,7 @@ var col = 0; //current letter for that attempt
 
 var gameOver = false;
 
-const words = ['hello', 'which', 'other', 'these', 'cloud'];
+const words = ['HELLO', 'WHICH', 'OTHER', 'THESE', 'CLOUD', 'APPLE', 'QUEEN', 'TOWER'];
 
 //choose word randomly from words array
 let rightGuessString = words[Math.floor(Math.random() * words.length)]
@@ -63,28 +63,31 @@ document.addEventListener("keyup", (e) => {
         col = 0; //start at 0 for new row
     }
 
+    //shows correct answer, in case player does not find the word
     if (!gameOver && row == height) {
         gomeOver = true;
-        document.getElementById("answer").innerText = words;
+        document.getElementById("answer").innerText = rightGuessString;
     }
 })
 
 function update() {
     let correct = 0;
-    for (let j = 0; j < width; j++) {
-        let currTile = document.getElementById(row.toString() + "-" + j.toString());
+    for (let i = 0; i < width; i++) {
+        let currTile = document.getElementById(row.toString() + "-" + i.toString());
         let letter = currTile.innerText;
-        console.log(letter);
-console.log(rightGuessString);
-        //is it in the correct position?
-        if (rightGuessString[j] == letter) {
+        
+//is it in the correct position?
+        if (rightGuessString[i] == letter) {
             currTile.classList.add("correct");
             correct += 1;
-            console.log(words);
-        } //is it in the word?
-        else if (words.includes(letter)) {
+        } 
+
+        //is it in the word?
+        else if (rightGuessString.includes(letter)) {
             currTile.classList.add("present");
-        } //not in the word
+        } 
+
+        //not in the word
         else {
             currTile.classList.add("absent");
         }
