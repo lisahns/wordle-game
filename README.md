@@ -19,4 +19,6 @@ shows whether letter is in the word, is in the correct position, or is not in th
 
 
 Additionally featuers that could be added:
+-add funcitonality to keyboard
+-show letters used on keyboard
 - if letter is in correct positon, and shown again in the word, it shows up yellow - could implement that this letter appears multiple times, even though that is not the case
